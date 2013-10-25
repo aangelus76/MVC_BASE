@@ -20,9 +20,10 @@ Type de requette :
 - /consulter/profiles/tous
 - /consulter/profiles/
 
- /consulter => Controller
+
+/consulter => Controller
  
- /offres => pages qui serras inclus dans le layout
+/offres => pages qui serras inclus dans le layout
 
 /de , /tous , /  => Action  appeller dans le Controller
  
