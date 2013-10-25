@@ -1,6 +1,6 @@
 ﻿<?php
 define("ROOT", realpath(__dir__."/"));
-define("ROOT_STYLE","http://127.0.0.1/MVC/V1/app/views/resources/");
+define("ROOT_STYLE","http://127.0.0.1/MVC/MVC_BASE/app/views/resources/");
 define('WEB_ROOT', substr($_SERVER['SCRIPT_NAME'], 0, strpos($_SERVER['SCRIPT_NAME'], '/index.php')));
 //echo WEB_ROOT;
 //echo ROOT."<br>";
