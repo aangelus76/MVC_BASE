@@ -3,7 +3,7 @@
 				
 				public function index(){
 
-                                $this->views->Msg = '<br>Affichage de la liste de consultation';
+                                $this->views->Msg = '<br>Affichage de la liste de consultation!';
 								$this->views->url = $this->route;							    
 								 $this->views->renderView();  
 								 $this->GetUrlData();
@@ -11,18 +11,18 @@
 								 echo Controllers::GetParams($this->route);
                 }
 				
-				public function profile(){
+				public function tous(){
 
-                                $this->views->Msg = '<br>Consultation de la liste de profile';
+                                $this->views->Msg = '<br>Consultation de toute la liste';
 								//$this->views->display(); 
 								$this->views->renderView();  
 								$this->GetUrlData();
 								echo Controllers::GetParams($this->route);
                 }
 				
-				public function offres(){
+				public function de(){
 
-                                $this->views->Msg = '<br>Consultation de la liste des offres';
+                                $this->views->Msg = '<br>Consultation '.Controllers::GetParams($this->route);
 								//$this->views->display();
 								$this->views->renderView();  
 								 $this->GetUrlData();  

@@ -8,7 +8,7 @@ class Routers {
 	   $result = array(
          "controller" => isset($ResultPart[0]) ? rtrim($ResultPart[0],"/") : "error",
 		 "page" => !empty($ResultPart[1]) ? $ResultPart[1] : "index",
-         "action" => !empty($ResultPart[2]) ? $ResultPart[2] : "index",
+         "action" => !empty($ResultPart[2]) ? $ResultPart[2] : "tous",
          "params" => !empty($ResultPart[3]) ? $ResultPart[3] : "All"
       );
       

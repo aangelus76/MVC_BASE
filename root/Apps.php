@@ -28,6 +28,9 @@ class Apps {
 		  if(in_array($route["action"],get_class_methods($controller))){
             call_user_func($method);
 	      }
+		  else{
+			 call_user_func(array($controler = new errorController($route), "ActionError"));
+		}
 	    }
         else{
 			 call_user_func(array($controler = new errorController($route), "index"));

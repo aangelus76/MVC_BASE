@@ -20,7 +20,7 @@
   <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
   </head> 
   <body>
-    <div class="hero-unit"><h1>Acceuil du MVC -!</h1></div>
+    <div class="hero-unit"><h1>Acceuil du MVC .</h1></div>
     <div class="container-fluid">
   <div class="row-fluid">
     <div class="span2">
@@ -28,19 +28,23 @@
             <ul class="nav nav-list">
               <li class="nav-header">Menu de test</li>
               <li><a href="<?= WEB_ROOT; ?>">Affiche Index</a></li>
-              <li><a href="<?= WEB_ROOT; ?>/consulter">consulter</a></li> 
+              <li><a href="<?= WEB_ROOT; ?>/consulter">consultation</a></li> 
               <li><a href="<?= WEB_ROOT; ?>/consulter/profiles/">consulter liste des profile</a></li>
-              <li><a href="<?= WEB_ROOT; ?>/consulter/profiles/profile">consulter un profile</a></li>
+              <li><a href="<?= WEB_ROOT; ?>/consulter/profiles/tous">consulter tous les profile</a></li>
+              <li><a href="<?= WEB_ROOT; ?>/consulter/profiles/de/4565_789">consulter un profile</a></li>
+              <li><a href="<?= WEB_ROOT; ?>/consulter/profiles/de/121351-RTGDF">consulter profile 12321354</a></li>              
               <li><a href="<?= WEB_ROOT; ?>/consulter/offres/">consulter les offres</a></li>
+              <li><a href="<?= WEB_ROOT; ?>/consulter/offres/tous">consulter toutes les offres</a></li>
+              <li><a href="<?= WEB_ROOT; ?>/consulter/offres/de/56QS65SQ">consulter offre 56QS65SQ</a></li>
               <li><a href="<?= WEB_ROOT; ?>/consulter/toto/">voire toto</a></li>
-              <li><a href="<?= WEB_ROOT; ?>/consulter/profiles/profile/121351">consulter profile 12321354</a></li>
-              <li><a href="<?= WEB_ROOT; ?>/consulter/offres/offres/56QS65SQ">consulter offre 56QS65SQ</a></li>
               <li><a href="<?= WEB_ROOT; ?>/consulterd">Erreur</a></li>
                </ul>
           </div>
     </div>
     <div class="span10">
+    <div class="well text-success">
     <?php echo $this->content(); ?>
+    </div>
     </div>
     </div></div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

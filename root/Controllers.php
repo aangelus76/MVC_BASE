@@ -6,7 +6,6 @@ class Controllers {
 
    public function __construct($route) {
       $this->route = $route;
-	// $this->ViewDebug('$route. dans Controllers.php',$route);
       $this->views = new Views($route);
    }
    
@@ -17,16 +16,6 @@ class Controllers {
 	   else{
 		  return "*";
 	   }
-   }
-   
-   public function ViewDebug($ItemDebug = "",$data = null){
-	   echo "<pre>"; 
-	   echo "<hr>";
-	   echo "Debug -> ".$ItemDebug.'<br />';
-	   echo "###############################<br />";
-	   print_r($data);
-	   echo "<hr>";
-	   echo "</pre>";
    }
 
 }
