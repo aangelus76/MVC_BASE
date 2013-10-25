@@ -21,22 +21,22 @@ Type de requette :
 - /consulter/profiles/
 
 
-/consulter => Controller
+/consulter => Controller ( consulterController )
  
 /offres => pages qui serras inclus dans le layout
 
-/de , /tous , /  => Action  appeller dans le Controller
+/de , /tous , /  => Action  appellé dans le Controller
  
 
-### Explication d'appelle des Controller. ###
+### Explication d'appelle des "Controller". ###
 
 A vennir.
 
-### Explication d'appelle d' Action. ###
+### Explication d'appelle d' "Action". ###
 
 A vennir.
 
-### Explication d'appelle de Pages. ###
+### Explication d'appelle de "Pages". ###
 
 A vennir.
 
