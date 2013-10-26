@@ -1,54 +1,82 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <title>MVC Perso</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Bootstrap -->
-  <link href="<?php echo ROOT_STYLE; ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
+<head>
+<title>MVC Perso</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link href="<?php echo ROOT_STYLE; ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
       <script src="../../assets/js/html5shiv.js"></script>
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
-  <link rel="stylesheet" type="text/css" href="<?php echo ROOT_STYLE; ?>css/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="<?php echo ROOT_STYLE; ?>bootstrap/css/bootstrap-responsive.css" />
-  <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap-responsive.css" />
-  <script type="text/javascript" src="/ScriptLibrary/jquery-latest.pack.js"></script>
-  <script type="text/javascript" src="<?php echo ROOT_STYLE; ?>bootstrap/js/bootstrap.js"></script>
-  <link rel="stylesheet" type="text/css" href="<?php echo ROOT_STYLE; ?>bootstrap/css/bootstrap.css" />
-  <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
-  </head> 
-  <body>
-    <div class="hero-unit"><h1>Acceuil du MVC .</h1></div>
-    <div class="container-fluid">
+<link rel="stylesheet" type="text/css" href="<?php echo ROOT_STYLE; ?>css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo ROOT_STYLE; ?>bootstrap/css/bootstrap-responsive.css" />
+<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap-responsive.css" />
+<script type="text/javascript" src="/ScriptLibrary/jquery-latest.pack.js"></script>
+<script type="text/javascript" src="<?php echo ROOT_STYLE; ?>bootstrap/js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo ROOT_STYLE; ?>bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo ROOT_STYLE; ?>bootstrap/theme/css/footerSticky.css" />
+<script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row-fluid">
+<div class="hero-unit span9">
+  <h1>Acceuil du MVC . <small>Prototype</small></h1>
+  <p></p>
+  <div class="container">
+        <p class="lead">MVC réalisé et adapter au besoin de la plateform RecruteAnim.</p>
+        <p>Dépos : <a href="https://github.com/aangelus76/MVC_BASE">GitHub</a> sans support d'aide de réutilisation en dehors du projet.</p>
+      </div>
+</div> 
+<div class="well sidebar-nav span3">
+        <ul class="nav nav-list text-right">
+          <li class="nav-header">Menu de test</li>
+          <li><a href="<?= WEB_ROOT; ?>">Affiche Index.</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/Recherche">Faire une recherche.</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/consulter">Faire une consultation.</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/poster">Post.</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/parametrer">Configuration.</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/contacter">Contact.</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/mon_repertoire">Voire mon répertoire.</a></li>
+        </ul>
+      </div>
+</div></div>  
+      
+<div class="container-fluid">
   <div class="row-fluid">
     <div class="span2">
-    <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Menu de test</li>
-              <li><a href="<?= WEB_ROOT; ?>">Affiche Index</a></li>
-              <li><a href="<?= WEB_ROOT; ?>/consulter">consultation</a></li> 
-              <li><a href="<?= WEB_ROOT; ?>/consulter/profiles/">consulter liste des profile</a></li>
-              <li><a href="<?= WEB_ROOT; ?>/consulter/profiles/tous">consulter tous les profile</a></li>
-              <li><a href="<?= WEB_ROOT; ?>/consulter/profiles/de/4565_789">consulter un profile</a></li>
-              <li><a href="<?= WEB_ROOT; ?>/consulter/profiles/de/121351-RTGDF">consulter profile 12321354</a></li>              
-              <li><a href="<?= WEB_ROOT; ?>/consulter/offres/">consulter les offres</a></li>
-              <li><a href="<?= WEB_ROOT; ?>/consulter/offres/tous">consulter toutes les offres</a></li>
-              <li><a href="<?= WEB_ROOT; ?>/consulter/offres/de/56QS65SQ">consulter offre 56QS65SQ</a></li>
-              <li><a href="<?= WEB_ROOT; ?>/consulter/toto/">voire toto</a></li>
-              <li><a href="<?= WEB_ROOT; ?>/consulterd">Erreur</a></li>
-               </ul>
-          </div>
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="nav-header">Menu de test</li>
+          <li><a href="<?= WEB_ROOT; ?>">Affiche Index</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/consulter">consultation</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/consulter/profiles/">consulter liste des profile</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/consulter/profiles/tous">consulter tous les profile</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/consulter/profiles/de/4565_789">consulter un profile</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/consulter/profiles/de/121351-RTGDF">consulter profile 12321354</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/consulter/offres/">consulter les offres</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/consulter/offres/tous">consulter toutes les offres</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/consulter/offres/de/56QS65SQ">consulter offre 56QS65SQ</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/consulter/toto/">voire toto</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/consulterd">Erreur</a></li>
+        </ul>
+      </div>
     </div>
     <div class="span10">
-    <div class="well text-success">
-    <?php echo $this->content(); ?>
+      <div class="well text-success"> <?php echo $this->content(); ?> </div>
     </div>
-    </div>
-    </div></div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="<?php echo ROOT_STYLE; ?>bootstrap/js/bootstrap.min.js"></script>
-  </body>
+  </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<div id="footer">
+      <div class="container">
+        <p class="text-muted credit">Copyright Angelus76 - <a href="http://www.recruteanim.fr">RecruteAnim</a>.</p>
+      </div>
+</div>
+<script src="<?php echo ROOT_STYLE; ?>bootstrap/js/bootstrap.min.js"></script>
+</body>
 </html>
