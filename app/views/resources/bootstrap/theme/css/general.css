@@ -33,6 +33,9 @@ body {
 .hero-unit{
 	background-color:#D8DBC6;	
 }
+.hero-unit h1.Gold {
+	color:#AF9B09;
+}
 #search {
 	position: absolute;
 	z-index: 25;
