@@ -8,7 +8,7 @@
 								 $this->views->renderView();  
 								 $this->GetUrlData();
 								 print_r($this->route);
-								 echo Controllers::GetParams($this->route);
+								 echo $this->GetParams($this->route);
                 }
 				
 				public function tous(){
@@ -17,16 +17,16 @@
 								//$this->views->display(); 
 								$this->views->renderView();  
 								$this->GetUrlData();
-								echo Controllers::GetParams($this->route);
+								echo $this->GetParams($this->route);
                 }
 				
 				public function de(){
 
-                                $this->views->Msg = '<br>Consultation '.Controllers::GetParams($this->route);
+                                $this->views->Msg = '<br>Consultation '.$this->GetParams($this->route);
 								//$this->views->display();
 								$this->views->renderView();  
 								 $this->GetUrlData();  
-								 echo Controllers::GetParams($this->route);
+								 echo $this->GetParams($this->route);
                 }
 				
 				public function Erreur(){
@@ -35,6 +35,15 @@
 								//$this->views->display(); 
 								$this->views->renderView();  
 								 $this->GetUrlData();
+                }
+				
+				public function GetParams($DataParam = array()){
+	                            if(isset($DataParam['params']) && !empty($DataParam['params']) && $DataParam['params'] != "All" ){
+		                           return $DataParam['params'];
+	                            }
+	                             else{
+		                           return "*";
+	                            }
                 }
 				
 				public function GetUrlData(){

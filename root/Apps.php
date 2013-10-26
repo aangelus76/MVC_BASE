@@ -1,22 +1,24 @@
 <?php
 
 class Apps {
-	
-   public static function autoload($class) {
-      if(file_exists(ROOT."/root/$class.php")){
-         require_once(ROOT."/root/$class.php");
-	  }
-      else if(file_exists(ROOT."/app/controllers/".$class.".php")){
-         require_once(ROOT."/app/controllers/".$class.".php");
-	  }
-   }
-
-
-   public static function run() {
+  
+  public static function autoloadRoot($className) {
+    set_include_path(ROOT."/root/");
+    spl_autoload($className);
+  }
+  
+  public static function autoloadApp($className) {
+    set_include_path(ROOT."/app/controllers/");
+    spl_autoload($className);
+  }
+  
+  public static function run() {
       // Autoload
-      spl_autoload_register(array("Apps", "autoload"));
-      // Analyser la requete
-      $query = isset($_GET["query"]) ? $_GET["query"] : "index";
+      spl_autoload_register(array("Apps", "autoloadApp"));
+	  spl_autoload_register(array("Apps", "autoloadRoot"));
+      
+	  // Analyser la requete
+      $query = (isset($_GET["query"]) && !empty($_GET["query"])) ? $_GET["query"] : "index";
       $route = Routers::analyze( $query );
       $class = str_replace("/","",$route["controller"])."Controller";
       //Traitement pour chargement
@@ -29,7 +31,7 @@ class Apps {
             call_user_func($method);
 	      }
 		  else{
-			 call_user_func(array($controler = new errorController($route), "ActionError"));
+			 call_user_func(array($controler = new indexController($route), "index"));
 		}
 	    }
         else{
