@@ -16,10 +16,12 @@ class Apps {
       // Autoload
       spl_autoload_register(array("Apps", "autoloadApp"));
 	  spl_autoload_register(array("Apps", "autoloadRoot"));
-      
 	  // Analyser la requete
       $query = (isset($_GET["query"]) && !empty($_GET["query"])) ? $_GET["query"] : "index";
-      $route = Routers::analyze( $query );
+	  
+	  $Routers = new Routers();
+      $route  = $Routers->urlParse($query);
+
       $class = str_replace("/","",$route["controller"])."Controller";
       //Traitement pour chargement
       if($class) {
@@ -31,7 +33,8 @@ class Apps {
             call_user_func($method);
 	      }
 		  else{
-			 call_user_func(array($controler = new indexController($route), "index"));
+			 call_user_func(array($controller , "index"));
+			 //print_r(get_class_methods($controller));
 		}
 	    }
         else{

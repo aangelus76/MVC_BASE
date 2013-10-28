@@ -45,5 +45,5 @@ echo '<font color="#009900" face="Arial Black"><p></p>Variable disponible :</fon
  print_r($VarUser); 
 
 echo "</pre><br />Fin Débugage Total<br><hr>";
-*/
+/**/
 ?>

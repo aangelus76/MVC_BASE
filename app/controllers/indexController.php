@@ -4,7 +4,7 @@
                 
                 public function index(){
 
-                                $this->views->Msg = '<br>Dynamic title';   
+                                $this->views->Msg = '<br>Dynamic title!!!';   
 								$this->views->renderView();   
                 }
 
