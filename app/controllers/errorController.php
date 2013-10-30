@@ -1,19 +1,19 @@
 ﻿<?php
-        class errorController extends Controllers {
-                
 
-                public function index(){
+class errorController extends Controllers{
 
-                                $this->views->Msg = '<br>Erreur interne!';
-								//$this->views->display(); 
-								$this->views->renderView();
-                }
-				
-				 public function ActionError(){
+    public function index(){
 
-                                $this->views->Msg = '<br>Action inconnue!';
-								//$this->views->display(); 
-								$this->views->renderView();
-                }
+        $this->views->Msg = '<br>Erreur interne!';
+        //$this->views->display(); 
+        $this->views->renderView();
+    }
 
-        }
+    public function ActionError(){
+
+        $this->views->Msg = '<br>Action inconnue!';
+        //$this->views->display(); 
+        $this->views->renderView();
+    }
+
+}

@@ -12,30 +12,31 @@ class Views {
    
    
    public  function renderView() {
-	  if($this->_route["controller"] == "index"){
-		  $viewFile = ROOT . "/app/views/pages/" . $this->_route["controller"] . "/index.phtml";
-	  }
-	  else{
-		  $viewFile = ROOT . "/app/views/pages/" . $this->_route["controller"] . "/" . $this->_route["page"] . ".phtml";
-	  }
-	  
-	   $errorFile = ROOT . "/app/views/pages/erreur/index.phtml";
 
-      if( file_exists( $viewFile ) ){
-		  $openFile = $viewFile;
-	  }
-      else{
-		  $openFile = $errorFile;
-	  }
-     
-	    ob_start();
-		 include($openFile);
-		$this->_content = ob_get_clean();
-        include(ROOT . "/app/views/pages/".$this->_layout.".phtml");
-   }
+//                  $this->MsgError = "Page introuvable";
+
+        ob_start();
+        include($this->ReturnView());
+        $this->_content = ob_get_clean();
+        include(Apps_Pages . $this->_layout . ".phtml");
+        
+    }
    
    public function content(){
 		return $this->_content;
 	}
+        
+   public function ReturnView(){
+       $DirPath =    Apps_Pages .$this->_route["controller"]."/";
+       $Controller = $this->_route["controller"];
+       $Page       = $this->_route["page"].'.phtml';
+       
+       $ValidDir = is_dir($DirPath) ? $DirPath : Apps_Pages."error/";
+       $ValidPage = file_exists($ValidDir.$Page) ? $ValidDir.$Page : $ValidDir.'index.phtml';
+       
+       $ValidAll = file_exists($ValidPage) ? $ValidPage : Apps_Pages."error/index.phtml";
+       
+       return  $ValidAll;
+   }
 }
 

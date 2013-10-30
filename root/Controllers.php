@@ -7,7 +7,7 @@ class Controllers {
    public function __construct($route) {
       $this->route = $route;
       $this->views = new Views($route);
-	  
    }
+   
 
 }
