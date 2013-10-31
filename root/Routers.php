@@ -1,8 +1,8 @@
 ﻿<?php
 
-class Routers {
+class Routers{
 
-    public function urlParse() {
+    public function urlParse(){
         $query = (isset($_GET["query"]) && !empty($_GET["query"])) ? $_GET["query"] : "index";
         $ResultPart = explode("/", rtrim($query, "/"));
 
@@ -15,9 +15,9 @@ class Routers {
         return $result;
     }
 
-    public function SetParams($Params) {
+    public function SetParams($Params){
         $ArrayReturn = array();
-        for ($i = 3; $i < count($Params); $i++) {
+        for($i = 3; $i < count($Params); $i++){
             array_push($ArrayReturn, $Params[$i]);
         }
         return $ArrayReturn;

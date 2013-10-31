@@ -40,8 +40,8 @@ class Apps{
 
     public static function GetValidActions($Controller, $Actions){
         $ValidAction = in_array($Actions, get_class_methods($Controller)) ? true : false;
-        Apps::$DefaultAction = in_array($Actions, get_class_methods($Controller)) ? $Actions : Apps::$DefaultAction;
-        call_user_func(array($Controller, Apps::$DefaultAction));
+        Apps::$DefaultAction = in_array($Actions, get_class_methods($Controller)) ? $Controller->$Actions : $Controller->Erreur('Action inexistante');
+        //call_user_func(array($Controller, Apps::$DefaultAction));
         return $ValidAction;
     }
 
