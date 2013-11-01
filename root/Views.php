@@ -1,7 +1,9 @@
 ﻿<?php
 
-class Views{
-
+class Views extends FindError{
+    /**
+     *Mettre en place une gestion d'erreur si une vue n'existe pas!
+     */
     private $_route;
     protected $_content = "";
     protected $_layout = 'layout';
@@ -13,6 +15,7 @@ class Views{
     public function renderView(){
         ob_start();
         include($this->ReturnView());
+        //include($this->GetExistView());
         $this->_content = ob_get_clean();
         include(Apps_Pages . $this->_layout . ".phtml");
     }
@@ -28,8 +31,8 @@ class Views{
         $ValidDir = is_dir($DirPath) ? $DirPath : Apps_Pages . "error/";
         $ValidPage = file_exists($ValidDir . $Page) ? $ValidDir . $Page : Apps_Pages . "error/index.phtml";
         $ValidAll = file_exists($ValidPage) ? $ValidPage : Apps_Pages . "error/index.phtml";
-
         return $ValidAll;
+       
     }
 
 }

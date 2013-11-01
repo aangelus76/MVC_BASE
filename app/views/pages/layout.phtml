@@ -21,23 +21,25 @@
 <div class="container-fluid">
   <div class="row-fluid">
 <div class="hero-unit span9">
-  <h1 class="Gold">Acceuil du MVC . <small>Prototype V_RC_1.16.a</small></h1>
+  <h1 class="Gold">Acceuil du MVC . <small>Prototype V_RC_1.20.a</small></h1>
   <p></p>
   <div class="container">
         <p class="lead">MVC réalisé et adapté au besoin de la plateform RecruteAnim.</p>
         <p>Dépos : <a href="https://github.com/aangelus76/MVC_BASE">GitHub</a> sans support d'aide de réutilisation en dehors du projet.</p>
-      </div>
+        <button type="button" data-toggle="modal" data-target="#myModal" class="btn-danger btn-large">Fenetre de Débug.</button>
+     <?= $this->MsgError; ?>
+  </div>
 </div> 
 <div class="well sidebar-nav offset1 span2">
         <ul class="nav nav-list text-left">
-          <li class="nav-header">Menu de BASE</li>
-          <li><a href="<?= WEB_ROOT; ?>">Affiche Index.</a></li>
-          <li><a href="<?= WEB_ROOT; ?>/Recherche">Faire une recherche.</a></li>
-          <li><a href="<?= WEB_ROOT; ?>/consulter">Faire une consultation.</a></li>
-          <li><a href="<?= WEB_ROOT; ?>/poster">Post.</a></li>
-          <li><a href="<?= WEB_ROOT; ?>/parametrer">Configuration.</a></li>
-          <li><a href="<?= WEB_ROOT; ?>/contacter">Contact.</a></li>
-          <li><a href="<?= WEB_ROOT; ?>/mon_repertoire">Voire mon répertoire.</a></li>
+          <li class="nav-header"><i class="icon-align-justify icon-black"></i> Menu de BASE</li>
+          <li><a href="<?= WEB_ROOT; ?>"><i class="icon-home icon-black"></i>Affiche Index.</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/Rechercher"><i class="icon-search icon-black"></i>rechercher.</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/consulter"><i class="icon-eye-open icon-black"></i>consultation.</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/poster"><i class="icon-pencil icon-black"></i>Poster.</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/parametrer"><i class="icon-cog icon-black"></i>Configuration.</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/contacter"><i class="icon-envelope icon-black"></i>Contacter.</a></li>
+          <li><a href="<?= WEB_ROOT; ?>/repertoire"><i class=" icon-user icon-black"></i>Voire mon répertoire.</a></li>
         </ul>
       </div>
 </div></div>  
@@ -50,6 +52,7 @@
         <p class="text-muted credit">Copyright Angelus76 - <a href="http://www.recruteanim.fr">RecruteAnim</a>.</p>
       </div>
 </div>
-<script src="<?php echo ROOT_STYLE; ?>bootstrap/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="<?php echo Apps_Style; ?>bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

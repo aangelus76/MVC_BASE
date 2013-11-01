@@ -21,11 +21,6 @@ class consulterController extends Controllers{
         $this->views->renderView();
     }
 
-    public function Erreur($Msg){
-
-       // $this->views->Msg = '<br>L\'action demander n\'existe pas!';
-        $this->views->Msg = $Msg;
-        $this->views->renderView();
-    }
+    
 
 }
