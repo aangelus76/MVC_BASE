@@ -2,11 +2,11 @@
 /*
 *  Prototype du MVC pour RecruteAnim
 *
-* date modifier : 31 octobre 2013
-* @since 13 octobre 2013
+* date modifier : 10 november 2013
+* @since 13 october 2013
 * @author Angelus76
 * @copyright RecruteAnim
-* @version 1.20.a
+* @version 1.26.a
 *
 */
 define("ROOT", realpath(__dir__ . "/"));

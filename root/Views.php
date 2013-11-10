@@ -1,6 +1,6 @@
 ﻿<?php
 
-class Views extends FindError{
+class Views{
     /**
      *Mettre en place une gestion d'erreur si une vue n'existe pas!
      */

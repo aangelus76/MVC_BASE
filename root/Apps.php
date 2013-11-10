@@ -21,10 +21,14 @@ class Apps{
         // Analyser la requete
         $Routers = new Routers();
         $route = $Routers->urlParse();
+        
+        $checkApps = new FindError($route);
+        //print_r($checkApps->GetExistAction());
         // Annalyse d'erreur
         //$FindError = new FindError($route);
         
         //Traitement pour chargement
+/*  Modifier tous ce qui est en dessous pour integrer FindError() */
         $class = str_replace("/", "", $route["controller"]) . "Controller";
 //print_r($FindError->GetExistClass($class));
         

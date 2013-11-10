@@ -12,6 +12,7 @@ class FindError{
    
    public function __construct($route){
         $this->_route = $route;
+        print_r($this->_route);
         //$this->GetExistClass("sdjkld");
     }
    
@@ -26,32 +27,28 @@ class FindError{
                                                    "MsgError" => "")
                                            : array("Statu" => "Error",
                                                    "ClassName"=>$this->_controller,
-                                                   "MsgError" => "La class n'existe pas.");  
+                                                   "MsgError" => "La class $className n'existe pas.");  
        return $ValidClass;
    } 
-/**
-* Controle si un controlleur existe, dans le cas ou il n'existe pas, ont en défini un par default
-* @param string $controller =  Nom du controlleur a controller
-* @return string $controller = Le nom du controlleur qui seras charger au final
-*/
-   public function GetExistController(){
-       
-   }
+
 /**
 * Controle si une vue " page " existe, dans le cas ou elle n'existe pas, ont en défini une par default
 * @param string $page =  Nom de la vue " page " a controller
 * @return string $page = Le nom de la vue " page " qui seras charger au final
 */
-   public function GetExistView(){
-
-   }
+   public function GetExistView($Controller,$pageName){
+    $DirPath = Apps_Pages . $Controller . "/";
+    $ValidPage = file_exists($DirPath . $pageName.".phtml") ? "La page $pageName existe" : "La page $pageName existe pas";
+    return $ValidPage;
+    }
 /**
 * Controle si une action existe, dans le cas ou elle n'existe pas, ont en défini un par default
 * @param string $action =  Nom de l'action a controller
 * @return string $action = Le nom de l'a class'action qui seras charger au final
 */
    public function GetExistAction(){
-       
+       $ValidAction = in_array($this->_route["action"], get_class_methods($this->_route["controller"]."Controller")) ? "Action ".$this->_route["action"]." existe" : "Action ".$this->_route["action"]." existe pas";
+        return $ValidAction;
    }
 /**
 * Controle si un model existe, dans le cas ou il n'existe pas, ont en défini un par default
