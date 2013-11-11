@@ -2,7 +2,7 @@
 
 
 > # Important !
-> **Ce projet na pas de but d'être partager ou être réutiliser, il est conçue pour la plateforme RecruteAnim et donc adapter a ces besoin, aucun support d'aide ne pourras être fournis si vous ne faite pas partis de la réalisation.**
+> **Ce MVC na pas pour but d'être partager ou être réutiliser, il est conçue pour la plateforme RecruteAnim et donc adapter a ces besoin, aucun support d'aide ne pourras être fournis si vous ne faite pas partis de la réalisation.**
 
 ### Conçu exclusivement pour RecruteAnim ###
 
