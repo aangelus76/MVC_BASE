@@ -26,7 +26,7 @@ class FindError{
                                                    "MsgError" => "")
                                            : array("Statu" => "Error",
                                                    "Name"=>$this->_controller,
-                                                   "MsgError" => "La class ".$this->_route["controller"]." n'existe pas.");  
+                                                   "MsgError" => "La catégorie <span class=\"text-error\">".$this->_route["controller"]."</span> n'existe pas.");  
        return $ValidClass;
    } 
 
@@ -43,7 +43,7 @@ class FindError{
                                                    "MsgError" => "") 
                                                  : array("Statu" => "Error",
                                                    "Name"=>$this->_page,
-                                                   "MsgError" => "La page ".$this->_route["page"]." existe pas");
+                                                   "MsgError" => "La page <span class=\"text-error\">".$this->_route["page"]."</span> existe pas");
     return $ValidPage;
     }
 /**
@@ -58,7 +58,7 @@ class FindError{
                                                                                            "MsgError" => "") 
                                                                                    : array("Statu" => "Error",
                                                                                            "Name"=>$this->_page,
-                                                                                           "MsgError" => "L'action ".$this->_route["action"]." existe pas");
+                                                                                           "MsgError" => "L'action <span class=\"text-error\">".$this->_route["action"]."</span> existe pas");
         return $ValidAction;
    }
 /**

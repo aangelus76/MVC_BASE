@@ -35,7 +35,7 @@ class Apps{
         $this->_Action  = $checkApps->GetExistAction();
         $this->_Params = $checkApps->GetExistParam();
 
-        
+         $ErrorMsg = "";
         if($this->_Class["Statu"] === "Sucess"){
             if($this->_View["Statu"] === "Sucess"){
                 if($this->_Action["Statu"] === "Sucess"){
@@ -43,14 +43,24 @@ class Apps{
                     $this->LoadView   = $this->_View["Name"];
                     $this->LoadAction  = $this->_Action["Name"];
                 }
+                else{
+                $ErrorMsg = $this->_Action["MsgError"];
+                }
+            }
+            else{
+            $ErrorMsg = $this->_View["MsgError"];
             }
         }
+        else{
+            $ErrorMsg = $this->_Class["MsgError"];
+        }
+         
+         define("ErrorMsgs",$ErrorMsg);
          $route["controller"] = $this->LoadClass;
          $route["page"] = $this->LoadView;
          $route["action"] = $this->LoadAction;
 
         $LoadApps = new $this->LoadClass($route);
         call_user_func(array($LoadApps, $this->LoadAction));
-
     }
 }
