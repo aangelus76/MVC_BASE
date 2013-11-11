@@ -16,8 +16,7 @@ class consulterController extends Controllers{
     }
 
     public function de(){
-
-        $this->views->Msg = '<br>Consultation ' . $this->route['params'][0];
+        $this->views->Msg = '<br>Consultation -> ' . $this->route['params'][0];
         $this->views->renderView();
     }
 

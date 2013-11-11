@@ -12,8 +12,6 @@ class FindError{
    
    public function __construct($route){
         $this->_route = $route;
-        print_r($this->_route);
-        //$this->GetExistClass("sdjkld");
     }
    
 /**
@@ -21,13 +19,14 @@ class FindError{
 * @param string $className =  Nom de la class a controller
 * @return string $class = Le nom de la class qui seras charger au final
 */
-   public function GetExistClass($className){
-       $ValidClass = class_exists($className) ? array("Statu" => "Sucess",
-                                                   "ClassName" => $className,
+   public function GetExistClass(){
+       $ValidClass = class_exists($this->_route["controller"]."Controller") 
+                                           ? array("Statu" => "Sucess",
+                                                   "Name" => $this->_route["controller"]."Controller",
                                                    "MsgError" => "")
                                            : array("Statu" => "Error",
-                                                   "ClassName"=>$this->_controller,
-                                                   "MsgError" => "La class $className n'existe pas.");  
+                                                   "Name"=>$this->_controller,
+                                                   "MsgError" => "La class ".$this->_route["controller"]." n'existe pas.");  
        return $ValidClass;
    } 
 
@@ -36,9 +35,15 @@ class FindError{
 * @param string $page =  Nom de la vue " page " a controller
 * @return string $page = Le nom de la vue " page " qui seras charger au final
 */
-   public function GetExistView($Controller,$pageName){
-    $DirPath = Apps_Pages . $Controller . "/";
-    $ValidPage = file_exists($DirPath . $pageName.".phtml") ? "La page $pageName existe" : "La page $pageName existe pas";
+   public function GetExistView(){
+    $DirPath = Apps_Pages . $this->_route["controller"] . "/";
+    $ValidPage = file_exists($DirPath . $this->_route["page"].".phtml") 
+                                                 ? array("Statu" => "Sucess",
+                                                   "Name" => $this->_route["page"],
+                                                   "MsgError" => "") 
+                                                 : array("Statu" => "Error",
+                                                   "Name"=>$this->_page,
+                                                   "MsgError" => "La page ".$this->_route["page"]." existe pas");
     return $ValidPage;
     }
 /**
@@ -47,7 +52,13 @@ class FindError{
 * @return string $action = Le nom de l'a class'action qui seras charger au final
 */
    public function GetExistAction(){
-       $ValidAction = in_array($this->_route["action"], get_class_methods($this->_route["controller"]."Controller")) ? "Action ".$this->_route["action"]." existe" : "Action ".$this->_route["action"]." existe pas";
+       $ValidAction = @in_array($this->_route["action"], get_class_methods($this->_route["controller"]."Controller")) 
+                                                                                   ? array("Statu" => "Sucess",
+                                                                                           "Name" => $this->_route["action"],
+                                                                                           "MsgError" => "") 
+                                                                                   : array("Statu" => "Error",
+                                                                                           "Name"=>$this->_page,
+                                                                                           "MsgError" => "L'action ".$this->_route["action"]." existe pas");
         return $ValidAction;
    }
 /**
@@ -57,5 +68,9 @@ class FindError{
 */
    public function GetExistModel(){
        
+   }
+   
+   public function GetExistParam(){
+         return $this->_route["params"];
    }
 }

@@ -1,9 +1,16 @@
 <?php
 
 class Apps{
-
-    private  $DefaultAction = "index";
-
+    
+    private  $_Class;
+    private  $_View;
+    private  $_Action;
+    private  $_Params;
+    
+    private $LoadClass  = "errorController";
+    private $LoadView   = "index";
+    private $LoadAction = "index";
+    
     public  function autoloadRoot($className){
         set_include_path(ROOT . "/root/");
         spl_autoload($className);
@@ -23,35 +30,27 @@ class Apps{
         $route = $Routers->urlParse();
         
         $checkApps = new FindError($route);
-        //print_r($checkApps->GetExistAction());
-        // Annalyse d'erreur
-        //$FindError = new FindError($route);
+        $this->_Class   = $checkApps->GetExistClass();
+        $this->_View   = $checkApps->GetExistView();
+        $this->_Action  = $checkApps->GetExistAction();
+        $this->_Params = $checkApps->GetExistParam();
+
         
-        //Traitement pour chargement
-/*  Modifier tous ce qui est en dessous pour integrer FindError() */
-        $class = str_replace("/", "", $route["controller"]) . "Controller";
-//print_r($FindError->GetExistClass($class));
-        
-        if($this->GetValidClass($class)){
-            $controller = new $class($route);
-            $this->GetValidActions($controller, $route["action"]);
+        if($this->_Class["Statu"] === "Sucess"){
+            if($this->_View["Statu"] === "Sucess"){
+                if($this->_Action["Statu"] === "Sucess"){
+                    $this->LoadClass   = $this->_Class["Name"];
+                    $this->LoadView   = $this->_View["Name"];
+                    $this->LoadAction  = $this->_Action["Name"];
+                }
+            }
         }
-        else{
-            call_user_func(array($controler = new errorController($route), $this->DefaultAction));
-        }
-    }
+         $route["controller"] = $this->LoadClass;
+         $route["page"] = $this->LoadView;
+         $route["action"] = $this->LoadAction;
 
-    public  function GetValidClass($class){
-        $ValidClass = class_exists($class) ? true : false;
-        return $ValidClass;
-    }
+        $LoadApps = new $this->LoadClass($route);
+        call_user_func(array($LoadApps, $this->LoadAction));
 
-    public  function GetValidActions($Controller, $Actions){
-        $ValidAction = in_array($Actions, get_class_methods($Controller)) ? true : false;
-//        Apps::$DefaultAction = in_array($Actions, get_class_methods($Controller)) ? $Controller->$Actions : $Controller->Erreur('Action inexistante');
-       $this->DefaultAction = in_array($Actions, get_class_methods($Controller)) ? $Actions : "Erreur";
-        call_user_func(array($Controller, $this->DefaultAction));
-        return $ValidAction;
     }
-
 }

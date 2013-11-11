@@ -1,9 +1,7 @@
 ﻿<?php
 
 class Views{
-    /**
-     *Mettre en place une gestion d'erreur si une vue n'existe pas!
-     */
+    
     private $_route;
     protected $_content = "";
     protected $_layout = 'layout';
@@ -14,8 +12,7 @@ class Views{
 
     public function renderView(){
         ob_start();
-        include($this->ReturnView());
-        //include($this->GetExistView());
+       include($this->ReturnView());
         $this->_content = ob_get_clean();
         include(Apps_Pages . $this->_layout . ".phtml");
     }
@@ -25,14 +22,9 @@ class Views{
     }
 
     public function ReturnView(){
-        $DirPath = Apps_Pages . $this->_route["controller"] . "/";
-        $Controller = $this->_route["controller"];
-        $Page = $this->_route["page"] . '.phtml';
-        $ValidDir = is_dir($DirPath) ? $DirPath : Apps_Pages . "error/";
-        $ValidPage = file_exists($ValidDir . $Page) ? $ValidDir . $Page : Apps_Pages . "error/index.phtml";
-        $ValidAll = file_exists($ValidPage) ? $ValidPage : Apps_Pages . "error/index.phtml";
-        return $ValidAll;
-       
+      $DirPath = Apps_Pages . str_replace("Controller","",$this->_route["controller"]) . "/";
+      $Page = $this->_route["page"] . '.phtml';
+      $Return = $DirPath.$Page;
+      return $Return;
     }
-
 }
