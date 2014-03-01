@@ -1,12 +1,10 @@
 ﻿<?php
 
 class Controllers {
-/**
- * Mettre en place un gestionaire d'erreur si un controlleur n'existe pas!
- * Mettre en place une gestion d'erreur si une action n'existe pas!
- */
+
     public $route;
     protected $views;
+	private  $_Model;
 
     public function __construct($route){
         $this->route = $route;
@@ -18,5 +16,12 @@ class Controllers {
         $this->views->Msg = "Erreur de fonctionement!";
         $this->views->renderView();
     }
+	
+	public function chargeModel($modelName){
+		require_once "Models.php";
+		$checkApps = new FindError();
+		$this->_Model   = $checkApps->GetExistModel($modelName);
+		return $this->_Model;
+	}
     
 }

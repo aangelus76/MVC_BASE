@@ -16,15 +16,16 @@ class Apps{
         spl_autoload($className);
     }
 
-    public  function autoloadApp($className){
+    public  function autoloadControl($className){
         set_include_path(ROOT . "/app/controllers/");
         spl_autoload($className);
     }
 
     public  function run(){
         // Autoload
-        spl_autoload_register(array("Apps", "autoloadApp"));
         spl_autoload_register(array("Apps", "autoloadRoot"));
+		spl_autoload_register(array("Apps", "autoloadControl"));
+		
         // Analyser la requete
         $Routers = new Routers();
         $route = $Routers->urlParse();

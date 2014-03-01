@@ -13,6 +13,7 @@ define("ROOT", realpath(__dir__ . "/"));
 define("WEB_ROOT", substr($_SERVER['SCRIPT_NAME'], 0, strpos($_SERVER['SCRIPT_NAME'], "/index.php")));
 
 define("Apps_Root", ROOT . "/app/");
+define("Apps_Model", ROOT . "/app/models/");
 define("Apps_Views", Apps_Root . "views/");
 define("Apps_Pages", Apps_Views . "pages/");
 define("Apps_Style", WEB_ROOT . "/app/views/resources/");
