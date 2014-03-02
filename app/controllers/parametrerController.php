@@ -9,7 +9,7 @@ class parametrerController extends Controllers{
     
     public function index(){
 		$CheckModel = $this->chargeModel('Statistique');
-        $this->views->Msg = $CheckModel["MsgError"];
+        $this->views->Msg = $this->UseModel->GetData();
         $this->views->renderView();
     }
     

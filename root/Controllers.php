@@ -5,6 +5,7 @@ class Controllers {
     public $route;
     protected $views;
 	private  $_Model;
+	public $UseModel;
 
     public function __construct($route){
         $this->route = $route;
@@ -21,7 +22,9 @@ class Controllers {
 		require_once "Models.php";
 		$checkApps = new FindError();
 		$this->_Model   = $checkApps->GetExistModel($modelName);
-		return $this->_Model;
+		
+		$this->UseModel = new $this->_Model["Name"]; 
+		//return $this->_Model;
 	}
     
 }

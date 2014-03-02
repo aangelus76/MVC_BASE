@@ -76,8 +76,9 @@ class FindError{
                                                    "Name" => $Model,
                                                    "MsgError" => "") 
                                                  : array("Statu" => "Error",
-                                                   "Name"=>"erreur de model",
+                                                   "Name"=>"Erreur",
                                                    "MsgError" => "Le model <span class=\"text-error\">".$Model."</span> n'existe pas");
+		require_once Apps_Model.$Model.".php";
     
 	return $ValidModel; // Retourne une page Valide
        //echo "test si model exist";

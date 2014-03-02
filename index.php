@@ -18,6 +18,7 @@ define("Apps_Views", Apps_Root . "views/");
 define("Apps_Pages", Apps_Views . "pages/");
 define("Apps_Style", WEB_ROOT . "/app/views/resources/");
 
+require_once "config/Version.php";
 require_once(ROOT . "/root/Apps.php");
 $StartApps = new Apps();
 $StartApps->run();

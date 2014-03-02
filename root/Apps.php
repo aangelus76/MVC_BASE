@@ -1,5 +1,4 @@
 <?php
-
 class Apps{
     
     private  $_Class;

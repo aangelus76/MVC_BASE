@@ -10,5 +10,9 @@ class Statistique extends Models{
 	public function ViewStat(){
 		echo "90%";
 	}
+	public function GetData(){
+		$Data = "Test de Data";
+		return $Data;
+	}
 
 }
