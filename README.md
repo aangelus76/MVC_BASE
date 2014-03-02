@@ -29,14 +29,28 @@ Type de requette :
  
 
 ### Explication d'appelle des "Controller". ###
+Les Controllers font ofice de catégorie,
+Appeller le controller consulterController.php revien a appeller la categorie "consulter"
 
-A vennir.
+pour chaque categorie sur le site, il y auras donc 1 controller, chaque controller execute la demande de la catégorie
+Ex : 
+consulter/offres
+consulter/profile
+consulter/evenement
+
+consulter es le controller " la categorie " (offres, profile, evenement ...) sont des pages qui serons executer par le controller
+
+Suite a vennir.
 
 ### Explication d'appelle d' "Action". ###
 
 A vennir.
 
 ### Explication d'appelle de "Pages". ###
+
+A vennir.
+
+### Explication Chargement et appelle de "Model". ###
 
 A vennir.
 
