@@ -14,7 +14,7 @@ class Models {
    
     public function connexion(){
 		
-		echo $this->DBInfo["DBName"];
+		return $this->DBInfo["DBName"];
 	}
 
 }

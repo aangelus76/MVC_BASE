@@ -8,7 +8,7 @@ class Statistique extends Models{
     }
 	
 	public function ViewStat(){
-		return "90%";
+		return "80%".$this->connexion();
 	}
 	public function GetData(){
 		$Data = "Test de Data";
