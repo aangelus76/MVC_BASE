@@ -10,6 +10,7 @@ class parametrerController extends Controllers{
     public function index(){
 		$CheckModel = $this->chargeModel('Statistique');
         $this->views->Msg = $this->UseModel->GetData();
+		$this->views->MsgStat = $this->UseModel->ViewStat();
         $this->views->renderView();
     }
     
