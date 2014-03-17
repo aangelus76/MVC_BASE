@@ -6,9 +6,32 @@
       <div class="well text-success hero-unit"> 
           <h1>Page Parametre</h1>
           <p><?= $this->Msg; ?></p>
-          <p><?= $this->MsgStat; ?></p>
-          
-</div>
+          <?php foreach ($this->MsgStat as $data): ?>
+          <p><?= $data['nom'] ?> | Id => 
+			 <?= $data['id'] ?></p>
+             
+         <?php endforeach; ?>
+          </div>
+         <table class="table">
+          <caption>Tableau Enfants</caption>
+          <thead>
+          <tr>
+           <th>Id</th>
+           <th>Nom</th>
+           <th>Zone</th>
+          </tr>
+         </thead>
+         <tbody>
+         <?php foreach ($this->MsgStatMulti as $dataM): ?>     
+          <tr>
+           <td><?= $dataM['id'] ?></td>
+           <td><?= $dataM['nom'] ?></td>
+           <td><?= $dataM['zone'] ?></td>
+          </tr>
+	     <?php endforeach; ?>
+         </tbody>
+        </table>
+     </div>
     </div>
   </div>
 </div>

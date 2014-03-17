@@ -8,8 +8,14 @@ class Statistique extends Models{
     }
 	
 	public function ViewStat(){
-		return "80%".$this->connexion();
+		$this->connexion();
+		return $this->fetchOne("enfants",4);
 	}
+	public function ViewStatMulti(){
+		$this->connexion();
+		return $this->fetchMulti("enfants");
+	}
+	
 	public function GetData(){
 		$Data = "Test de Data";
 		return $Data;

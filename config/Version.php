@@ -1,6 +1,6 @@
 ﻿<?php
 
-$MvcVersion = "V_RC_1.31.a";
+$MvcVersion = "V_RC_1.32.a";
 $MvcStatu   = "Dev";
 $MvcType    = "Release";
 

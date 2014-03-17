@@ -1,6 +1,6 @@
 ﻿<?php
 $ArrayDB = array("DBHost" => "localhost",
-                 "DBName" => "recruteanims",
+                 "DBName" => "ee",
 				 "DBUser" => "root",
 				 "DBPass" => "");
 				 

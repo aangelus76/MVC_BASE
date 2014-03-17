@@ -11,6 +11,7 @@ class parametrerController extends Controllers{
 		$CheckModel = $this->chargeModel('Statistique');
         $this->views->Msg = $this->UseModel->GetData();
 		$this->views->MsgStat = $this->UseModel->ViewStat();
+		$this->views->MsgStatMulti = $this->UseModel->ViewStatMulti();
         $this->views->renderView();
     }
     
