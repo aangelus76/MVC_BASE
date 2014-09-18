@@ -6,7 +6,7 @@
 * @since 13 october 2013
 * @author Angelus76
 * @copyright RecruteAnim
-* @version 1.26.a
+* @version 1.32.a
 *
 */
 define("ROOT", realpath(__dir__ . "/"));
